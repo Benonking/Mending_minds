@@ -1,12 +1,12 @@
 import React from 'react';
-import Home from './components/Home';
+import Landing from './components/Landing';
 
 
 function App() {
   return (
     <React.Fragment>
       
-      <Home />
+      <Landing />
     </React.Fragment>
   );
 }
