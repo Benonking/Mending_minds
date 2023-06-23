@@ -4,7 +4,7 @@ import Navbar from './Navbar/Navbar'
 
 
 
-const Home = () => {
+const Landing = () => {
   return (
     <div className="body">
       <Navbar />
@@ -78,4 +78,4 @@ const Home = () => {
   );
 }
 
-export default Home
+export default Landing
