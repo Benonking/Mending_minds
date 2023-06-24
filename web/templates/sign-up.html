@@ -1,0 +1,38 @@
+{% extends 'index.html' %} {% block title %}sign-up{% endblock %}
+{% block response %}
+<form method="POST">
+    <h2 align="center"> Create Account</h2>
+    <div>
+        <label>
+            Email Address
+        </label>
+        <input type="email" placeholder="Enter email" name="email"/>
+    </div>
+    <div>
+        <label>
+            Fist Name
+        </label>
+        <input type="text" placeholder="Enter first name" name="firstname"/>
+    </div>
+    <div>
+        <label>
+            Last Name
+        </label>
+        <input type="text" placeholder="Enter last name" name="lastname"/>
+    </div>
+    <div>
+        <label>
+            Enter Password
+        </label>
+        <input type="password" placeholder="Enter password" name="password1"/>
+    </div>
+    <div>
+        <label>
+            Re-enter password
+        </label>
+        <input type="password" placeholder="Confirm password" name="password2"/>
+    </div>
+    <br/>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
