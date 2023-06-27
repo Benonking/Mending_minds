@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}landing{% endblock%}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <!-- load js scrip
+        <script
+            type="text/javascript"
+            #src=" url_for('static', filename='index.js') }}">
+    </script> -->
+    <div>
+        {% if user.is_authenticted %}
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+        {% else %} 
+        <a href="/login">Login</a>
+        <a href="/sign-up">sign-up</a> 
+        {% endif %}
+        
+    </div>
+    <div>
+        {% block response %}
+        {% endblock %}
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+        {% if category == 'error' %}
+        <div style="color: rgb(255, 0, 64); background-color: antiquewhite;">
+            {{ message }}
+            <button type="button" class="close">
+               <span aria-hidden="true">&times;</span> 
+            </button>
+        </div>
+        {% else %}
+        <div style="color: rgb(6, 78, 13); font-weight: 200;background-color: azure;">
+            {{ message }}
+            <button type="button" class="close" data-dismis="alert">
+               <span aria-hidden="true">&times;</span> 
+            </button>
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    </body>
+</html>
